@@ -1,0 +1,49 @@
+<h1 class="mt-5 mb-4 header">Update Job</h1>
+
+<% if(errorMessage){ %>
+<div class = "alert alert-danger" role="alert">
+    <%= errorMessage %>
+</div>
+<% } %>
+
+<form action="/update" method="post">
+    <input type="hidden" class="form-control" id="id" name="id" value="<%= job.id %>">
+    <input type="hidden" class="form-control" id="id" name="id" value="<%= job.recruiter %>">
+    <div class="mb-3">
+        <label for="jobCategory" class="form-label">Job Category</label>
+        <input type="text" class="form-control" id="jobCategory" name="jobCategory" value="<%= job.jobCategory %>">
+    </div>
+    <div class="mb-3">
+        <label for="jobDesignation" class="form-label">Job Designation</label>
+        <input type="text" class="form-control" id="jobDesignation" name="jobDesignation" value="<%= job.jobDesignation %>">
+    </div>
+    <div class="mb-3">
+        <label for="jobLocation" class="form-label">Job Location</label>
+        <input type="text" class="form-control" id="jobLocation" name="jobLocation" value="<%= job.jobLocation %>">
+    </div>
+    <div class="mb-3">
+        <label for="companyName" class="form-label">Company Name</label>
+        <input type="text" class="form-control" id="companyName" name="companyName" value="<%= job.companyName %>">
+    </div>
+    <div class="mb-3">
+        <label for="salary" class="form-label">Salary</label>
+        <input type="text" class="form-control" id="salary" name="salary" value="<%= job.salary %>">
+    </div>
+    <div class="mb-3">
+        <label for="applyBy" class="form-label">Apply By</label>
+        <input type="date" class="form-control" id="applyBy" name="applyBy" value="<%= job.applyBy %>">
+    </div>
+    <div class="mb-3">
+        <label for="skillsRequired" class="form-label">Skills Required</label>
+        <input type="text" class="form-control" id="skillsRequired" name="skillsRequired" step="0.01" value="<%= job.skillsRequired %>">
+    </div>
+    <div class="mb-3">
+        <label for="numberOfOpenings" class="form-label">Number of Openings</label>
+        <input type="number" class="form-control" id="numberOfOpenings" name="numberOfOpenings" value="<%= job.numberOfOpenings %>">
+    </div>
+
+    <input type="hidden" class="form-control" id="id" name="id" value="<%= job.jobPosted %>">
+    <input type="hidden" class="form-control" id="id" name="id" value="<%= job.applicants %>">
+    
+    <button type="submit" class="btn btn-primary">Update Job</button>
+</form>

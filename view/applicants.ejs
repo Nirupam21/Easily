@@ -1,0 +1,25 @@
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Resume</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% applicants.forEach(applicants => { %>
+            <tr>
+                <th><%= applicants.name %></th>
+                <td><%= applicants.email %></td>
+                <td><%= applicants.contact %> </td>
+                <td>
+                    <a href="/<%= applicants.resume %>" class="btn btn-primary">Resume</a>  
+                </td>
+            </tr>
+        <% }) %>
+
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+<div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                <h3><%= job.companyName %></h3>
+                <p><%= job.jobCategory %></p>
+                <p><%= job.jobDesignation %></p>
+                <p><%= job.jobLocation %></p>
+                <p><%= job.salary %></p>
+                <p>Apply By <%= job.applyBy %></p>
+                <p><%= job.skillsRequired %></p>
+                <p> Number of Opening : <%= job.numberOfOpenings %></p>
+                <p>Job Posted on <%= job.jobPosted %></p>
+                <p>Job Posted By <%= job.recruiter %></p>
+                <a href ="/jobs/<%= job.id %>/applicants" class="btn1">Applicants <%= job.applicants.length %></a>
+                <a href="/apply/<%= job.id %>" class="btn1">Apply</a>
+                <a href="/update/<%= job.id %>" class="btn1">Update</a>
+                <button class="btn btn-danger" onclick="deleteProduct('<%= job.id %>')">Delete</button>
+            </div>
+        </div>
+</div>
+<script>
+    function deleteProduct(id) {
+    const result = confirm(
+      'Are you sure you want to delete this product ?'
+    );
+    if (result) {
+      fetch('/delete/' + id, {
+        method: 'POST',
+      }).then((res) => {
+        if (res.ok) {
+          window.location.href = "/";
+        }
+      });
+    }
+  }
+</script>
